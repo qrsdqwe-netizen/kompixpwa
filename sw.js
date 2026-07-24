@@ -1,17 +1,17 @@
 const CACHE_NAME = "kompix-v1";
 
 const ASSETS = [
-    "/",
-    "/index.html",
-    "/style.css",
-    "/logo.png",
-    "/111.jpg",
-    "/222.jpg",
-    "/333.jpg",
-    "/otz.html",
-    "/manifest.json",
-    "/icons/icon-192.png",
-    "/icons/icon-512.png"
+    "./",
+    "./index.html",
+    "./style.css",
+    "./logo.png",
+    "./111.jpg",
+    "./222.jpg",
+    "./333.jpg",
+    "./otz.html",
+    "./manifest.json",
+    "./icons/icon-192.png",
+    "./icons/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
