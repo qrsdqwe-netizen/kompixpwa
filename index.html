@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>KOMPIX</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icons/icon-192.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <img src = "logo.png" alt="KOMPIX" class="header-logo">
+                <h1>KOMPIX</h1>
+            </div>
+            <nav class = "header-right">
+                <a href="index.html" class="active">Главная</a>
+                <a href="otz.html">Отзывы</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class="banner">
+            <h2>Компьютеры для всех</h2>
+            <p>Игровые, офисные, домашние</p>
+        </div>
+        <div class="products">
+            <div class="card">
+                <img src="111.jpg" alt="Игровой компьютер">
+                <h3>Игровой ПК Ultra</h3>
+                <p>Intel i7 14900K, RTX 4060, 64GB</p>
+                <p class="price">190 000 Р</p>
+                <button>В корзину</button>
+            </div>
+
+            <div class="card">
+                <img src="222.jpg" alt="Игровой компьютер">
+                <h3>Офисный ПК Pro</h3>
+                <p>Intel i5 10400F, RTX 2070 SUPER, 16GB, SSD 512GB</p>
+                <p class="price">100 000 Р</p>
+                <button>В корзину</button>
+            </div>
+
+            <div class="card">
+                <img src="333.jpg" alt="Игровой компьютер">
+                <h3>Моноблок Home</h3>
+                <p>Intel i3, 8GB, экран 24"</p>
+                <p class="price">38 000 Р</p>
+                <button>В корзину</button>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>2026 KOMPIX</p>
+            <p>Москва, ул. Компьютерная, д. 1</p>
+        </div>
+    </footer>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("sw.js")
+                    .then((reg) => {
+                        console.log("Service Worker зарегистрирован:", reg.scope);
+                    })
+                    .catch((err) => {
+                        console.log("Ошибка регистрации:", err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
