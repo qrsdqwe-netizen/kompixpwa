@@ -2,7 +2,6 @@ const CACHE_NAME = "kompix-v2";
 const RUNTIME_CACHE = "runtime-v1";
 
 const ASSETS = [
-    "./",
     "./index.html",
     "./style.css",
     "./logo.png",
@@ -16,7 +15,6 @@ const ASSETS = [
 ];
 
 
-// Установка Service Worker
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -26,7 +24,6 @@ self.addEventListener("install", (event) => {
 });
 
 
-// Активация и удаление старых кэшей
 self.addEventListener("activate", (event) => {
     event.waitUntil(
         caches.keys().then((keys) =>
@@ -43,7 +40,7 @@ self.addEventListener("activate", (event) => {
     self.clients.claim();
 });
 
-// Cache First
+
 async function cacheFirst(request) {
     const cached = await caches.match(request);
     if (cached) {
@@ -55,7 +52,6 @@ async function cacheFirst(request) {
     return response;
 }
 
-// Network First
 async function networkFirst(request) {
     const cache = await caches.open(RUNTIME_CACHE);
     try {
@@ -67,7 +63,7 @@ async function networkFirst(request) {
     }
 }
 
-// Обработка запросов
+
 self.addEventListener("fetch", (event) => {
     const request = event.request;
     const url = new URL(request.url);
